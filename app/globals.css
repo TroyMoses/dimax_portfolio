@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import 'tailwindcss/tailwind.css'; */
+
+.backDiv {
+    @apply absolute z-0 inset-0 bg-gradient-to-r from-cyan-300 to-emerald-300 shadow-md transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 rounded-md
+}
+
+.bg {
+    background-image: url('./public/assets/electrical.jpeg');
+}
