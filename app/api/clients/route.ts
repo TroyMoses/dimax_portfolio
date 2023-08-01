@@ -21,9 +21,7 @@ export async function POST(request: NextRequest) {
             message
         });
         
-        const response = await newClientFeedback.save();
-        console.log(response);
-        
+        await newClientFeedback.save();        
 
         // Send feedback email
         const transporter = nodemailer.createTransport({
