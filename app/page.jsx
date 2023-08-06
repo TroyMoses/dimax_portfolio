@@ -437,7 +437,7 @@ export default function Home() {
                                 <div>                                
                                     <span className="fa mr-1 fa-envelope text-gray-500"></span>
                                 </div>
-                                <div className="text-gray-400 pl-20 md:pl-0">
+                                <div className="text-gray-400 pl-12 md:pl-0">
                                     <a href={`mailto:${emailAddress}`}><span className="hover:text-amber-700">dimaxelectricalsolutions@gmail.com</span></a>
                                 </div>
                             </div>
