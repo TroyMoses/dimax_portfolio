@@ -19,9 +19,13 @@ import electrical1 from './public/assets/electrical1.jpeg';
 import plumb from './public/assets/plumb.jpg';
 import pump1 from './public/assets/pump1.jpeg';
 import logo1 from './public/assets/logo1.jpeg';
+import machineInstallation from './public/assets/machine_installation.jpg';
+import weldingProject from './public/assets/welding_project.jpg';
 
 
 export default function Home() {
+
+    const emailAddress = 'dimaxelectricalsolutions@gmail.com'
 
     const router = useRouter();
     const [client, setClient] = React.useState({
@@ -43,7 +47,8 @@ export default function Home() {
         }
     }, [client]);
 
-    const handleSubmit = async() => {
+    const handleSubmit = async(e) => {
+        e.preventDefault();
         try {
             setLoading(true);
             const res = await fetch('/api/clients', {
@@ -67,7 +72,7 @@ export default function Home() {
             }
             router.push('/');
         } catch (error) {
-            toast.error(error.message);
+            console.error(error.message);
         } finally {
             setLoading(false);
         }
@@ -88,7 +93,7 @@ export default function Home() {
                     <div className="relative md:flex z-10 bg-gray-50 p-10 max-w-4xl rounded-md shadow-md">
                         <div className="flex flex-col space-x-11 justify-between md:flex-row">
                             <div className="space-y-10 py-2">
-                                <div className='flex flex-col space-x-6'>
+                                <div className='flex flex-col space-x-6 bg-gray-200 md:bg-gray-50 p-5 md:p-0 rounded-lg'>
                                     <h1 className="text-4xl md:text-4xl font-serif text-center font-bold text-gray-800">
                                         DIMAX ENGINEERING COMPANY LTD
                                     </h1>
@@ -312,20 +317,15 @@ export default function Home() {
                         {/* <div className="backDiv"></div> */}
                         <div className="relative z-10 bg-gray-200 p-8 rounded:lg shadow:md space-y-2">
                             <Image 
-                                src={motor1} 
+                                src={machineInstallation} 
                                 className="w-60 h-40 rounded"/>
-                            <h3 className="text-2xl font-bold">Project Title</h3>
+                            <h3 className="text-2xl font-bold">Machine Installation</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
+                                We have done machine installation projects in various places in Uganda. 
+                                The machines that we have installed include motors, both single and three-phase 
+                                motors and many more electric machines. We have worked in various places including 
+                                Kampala, Bweyogerere and many more.
                             </p><br />
-                            <div>
-                                <Link href='' className="bg-gradient-to-r from-cyan-400 to-emerald-400 px-6 py-2 rounded-md shadow:md">
-                                    Explore More
-                                </Link>
-                            </div>
                         </div>
                     </div>
                     <div className="relative">
@@ -334,38 +334,28 @@ export default function Home() {
                             <Image 
                                 src={pump1} 
                                 className="w-60 h-40 rounded"/>
-                            <h3 className="text-2xl font-bold">Project Title</h3>
+                            <h3 className="text-2xl font-bold">Water Pump Repair</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
+                                 We have done water pump repairs in various places in the country, places like 
+                                 Bweyogerere and others. We have repaired different types of water pumps in various 
+                                 companies in Uganda including Pepsi Uganda and many others. We managed to gain the 
+                                 trust of such big companies.  
                             </p><br />
-                            <div>
-                                <Link href='' className="bg-gradient-to-r from-cyan-400 to-emerald-400 px-6 py-2 rounded-md shadow:md">
-                                    Explore More
-                                </Link>
-                            </div>
                         </div>
                     </div>
                     <div className="relative">
                         {/* <div className="backDiv"></div> */}
                         <div className="relative z-10 bg-gray-200 p-8 rounded:lg shadow:md space-y-2">
                             <Image 
-                                src={plumb} 
+                                src={weldingProject} 
                                 className="w-60 h-40 rounded"/>
-                            <h3 className="text-2xl font-bold">Project Title</h3>
+                            <h3 className="text-2xl font-bold">Metal Works</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
-                                Lorem ipsum dolor sit amet, consectetur adip non pro id el 
+                                We have produced all kinds of metal works in various places in Uganda. 
+                                Our company has made numerous products from welding, such as metallic beds, 
+                                chairs, tables, and many others. These have been delivered to various customers 
+                                on order and they really love our products. 
                             </p><br />
-                            <div>
-                                <Link href='' className="bg-gradient-to-r from-cyan-400 to-emerald-400 px-6 py-2 rounded-md shadow:md">
-                                    Explore More
-                                </Link>
-                            </div>
                         </div>
                     </div> 
                 </div>
@@ -419,7 +409,7 @@ export default function Home() {
                                     <div className="-mt-2 mb-4">
                                         <h1 className="text-md">{loading ? 'Processing Feedback Form .....' : ''}</h1>
                                     </div>
-                                    <button type="submit" className="bg-gradient-to-r from-cyan-400 to-emerald-400 px-6 py-2 rounded-md shadow:md">
+                                    <button type="submit" className="bg-gradient-to-r from-cyan-400 to-emerald-400 text-white hover:text-amber-900 px-6 py-2 rounded-md shadow:md">
                                         {buttonDisabled ? 'Provide Feedback' : 'Send Feedback'}
                                     </button>
                                 </div>
@@ -428,6 +418,51 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+             {/* Footer */}
+             <footer className="py-5 pl-10 bg-black text-white">
+                <div className="container pt-lg-4">
+                    <div className="flex flex-col text-center space-y-3 md:space-y-0 md:flex-row md:justify-between md:px-48">
+                        <div className="col-lg-3 col-sm-6 footer-top">
+                            <h4 className=" text-lg text-gray-300">Contacts</h4>
+                            <ul className="text-gray-400">					
+                                <li className="my-2"><span className="fa mr-1 fa-phone"></span>+256-705-785-716</li>
+                                <li className="my-2"><span className="fa mr-1 fa-phone"></span>+256-761-062-045</li>
+                    
+                            </ul>
+                        </div>
+                        <div className="col-lg-3 col-sm-6 footer-top flex flex-col">
+                            <h4 className="mb-1 text-lg text-gray-300">Email Address</h4>
+                            <div className="flex">
+                                <div>                                
+                                    <span className="fa mr-1 fa-envelope text-gray-500"></span>
+                                </div>
+                                <div className="text-gray-400 pl-20 md:pl-0">
+                                    <a href={`mailto:${emailAddress}`}><span className="hover:text-amber-700">dimaxelectricalsolutions@gmail.com</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Copyright */}
+                <section className="copy-right py-4 text-center">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-7">
+                                <p className="">© 2023 Dimax Engineering Company. All rights reserved | Design by TroyMoses
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+
+            {/* Move to top */}
+            <div className="move-top text-right">
+                <Link href="/" className="move-top text-green-500 bg-green-500"> 
+                    <span className="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+                </Link>
+            </div>
 
         </div>
     )
