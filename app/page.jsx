@@ -118,6 +118,10 @@ export default function Home() {
                                     Dimax Engineering Company.
                                 </p>
                                 <div className="inline-flex space-x-4 text-xl">
+                                    <a href={`mailto:${process.env.EMAIL_USER}`}>
+                                    <Image src={email} 
+                                            className="w-6 h-5"/>
+                                    </a>
                                     <Link href='https://www.youtube.com'>
                                         <Image src={youtube} 
                                             className="w-6 h-5"/>
@@ -130,10 +134,6 @@ export default function Home() {
                                     <Image src={facebook} 
                                             className="w-6 h-5"/>
                                     </Link>
-                                    <a href={`mailto:${process.env.EMAIL_USER}`}>
-                                    <Image src={email} 
-                                            className="w-6 h-5"/>
-                                    </a>
                                 </div>            
                             </div>
                         </div>
