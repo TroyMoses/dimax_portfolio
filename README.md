@@ -82,4 +82,4 @@ Our team will review your pull request, provide feedback, and merge it if everyt
 
 ## Bug Report
 
-If you encounter any bugs or issues while using the Helping Bank website, please open a new issue in this repository. Be sure to include details about the problem, steps to reproduce it, and any relevant error messages.
+If you encounter any bugs or issues while using the Dimax Engineering Company website, please open a new issue in this repository. Be sure to include details about the problem, steps to reproduce it, and any relevant error messages.
